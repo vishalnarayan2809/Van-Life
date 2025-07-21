@@ -1,0 +1,548 @@
+*,*::before,*::after{
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Inter", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #FFF7ED;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  width: 100%;
+}
+
+a{
+  color: black;
+  text-decoration: none;
+}
+/* Header */
+header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 120px;
+  padding: 2rem;
+  margin: 0;
+}
+
+header nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+ margin: 0;
+}
+
+header a{
+
+  text-decoration: none;
+  color: #161616;
+  font-weight: 600;
+  font-size: 1.2rem; 
+}
+
+header a:hover,a:active{
+  text-decoration: underline;
+}
+
+.logo{
+  font-weight: 900;
+  margin: 0;
+  font-size: 0.9rem;
+
+}
+
+/* Footer */
+
+footer{
+  background-color: #252525;
+  text-align: center;
+  padding-bottom: 1rem;
+  padding: 2rem;
+  margin-top: auto;
+}
+
+footer p{
+  margin: 0;
+  color: #AAAAAA;
+  font-size: 1.1rem;
+}
+
+/* Home */
+
+.home{
+  background-image: url('./assets/background.png');
+  height: 80vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1.5rem;
+  text-align: left;
+  background-color: rgba(31, 31, 31, 0.6);
+  background-blend-mode: darken;
+  width: 100%;
+}
+
+.home h2,p{
+  margin: 0;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.home h2{
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.home p{
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+.home button{
+  max-width: 350px;
+  background-color: #FF8C38;
+  font-family: inherit;
+  padding: 1rem;
+  border: none;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* About Page */
+
+#about_van{
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.about{
+  color: black;
+  width: 100vw;
+}
+
+.about p{
+  color: black;
+  margin-bottom: 1rem;
+}
+
+#info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+}
+
+#destination{
+  background-color: #FFCC8D;
+  margin-top: 2rem;
+  padding: 0.3rem 0 1.5rem 2rem;
+  border-radius: 6px;
+}
+
+#destination h4{
+  font-size: 1.3rem;
+}
+
+#destination button{
+  background-color: black;
+  font-family: inherit;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.3rem;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Vans Page */
+
+.vans{
+  margin: 2rem;
+  width: 100%;
+}
+.vans h2{
+  font-size: 1.8rem;
+  margin-bottom: 1.8rem;
+}
+
+.filter{
+  margin-bottom: 2rem;
+}
+
+.vanbtn{
+  color: #4D4D4D;
+  background-color: #FFEAD0;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  margin-right: 1rem;
+    width: auto;
+   display: inline-block;
+   font-family: inherit;
+   border: none;
+   cursor: pointer;
+}
+
+.van-list{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+
+}
+
+.van {
+  display: flex;
+  flex-direction: column;
+  min-height: 250px;
+}
+
+.van img{
+  width: 100%;
+  border-radius: 6px;
+  object-fit: cover;
+  margin-bottom: 0.7rem;
+}
+
+.van #name-price{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+justify-content: space-between;
+}
+.van h3,p{
+  margin: 0;
+}
+
+.van p{
+  color: black;
+  width: 90px;
+  text-align: center;
+}
+
+.simple{
+  color: #FFEAD0 !important;
+  background-color: #E17654;
+   padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  margin: 0.8rem;
+   width: 80px;
+   text-align: center;
+   margin-left: 0;
+}
+
+.rugged{
+  color: #FFEAD0 !important;
+  background-color: #115E59;
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+   margin: 0.8rem;
+   margin-left: 0;
+  text-decoration: none;
+  font-weight: 500;
+      width: 80px;
+   text-align: center;
+
+}
+
+.luxury{
+  color: #FFEAD0 !important;
+  background-color: #161616;
+   padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+   margin: 0.8rem;
+   width: 80px;
+   text-align: center;
+   margin-left: 0;
+
+}
+
+#clear{
+  text-decoration: underline;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* Van Detail */
+
+.van-detail{
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 85vw;
+}
+
+#back a{
+  margin-left: 1rem;  
+  text-decoration: underline;
+}
+
+.van-detail img{
+  width: 100%;
+  max-width: 500px;
+}
+
+.van-detail h3{
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+
+#price{
+  color: black;
+  font-weight: 800;
+  font-size: 1.2rem;
+  display: inline;
+}
+
+#desc{
+  color: black;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.van-detail button{
+  max-width: 350px;
+  background-color: #FF8C38;
+  font-family: inherit;
+  padding: 1rem;
+  border: none;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.loading{
+  margin:auto;
+  text-align: center;
+}
+
+/* Not Found */
+.notfound{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem;
+  width: 500px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.notfound>button{
+  border: none;
+  color: white;
+  background-color: black;
+  min-width: 100%;
+  border-radius: 4px;
+  padding: 0.8rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Host  */
+
+.host{
+ margin: 2rem;
+ display: flex;
+ flex-direction: column;
+  width: 100%;
+}
+
+.hostnav{
+ display: flex;
+ flex-direction: row;
+ gap: 1rem;
+ margin-bottom: 2rem;
+}
+
+/* Host Vans */
+
+.vantile{
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  max-width: 500px;
+  background-color: white;
+  padding: 1rem;
+  gap: 1rem;
+  border-radius: 4px;
+  align-items: center;  
+  }
+
+.vantile img{
+  width: 50px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.vantile h4{
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+.vantile p{
+  color: black;
+}
+
+
+
+/* Host Van Info */
+
+.hostvandetail{
+  display: flex;
+  gap: 1rem;
+  background-color: white;
+  padding: 1rem;
+  flex-direction: column;
+  margin-top: 1rem;
+
+}
+
+.hostvandetail>div{
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.hostvandetail img{
+width: 100px;
+object-fit: cover;
+border-radius: 4px;
+}
+
+.hostvandetail h2{
+  margin: 0;
+}
+
+.hostvandetail p{
+  color: black;
+  font-weight: 600;
+  margin: 0;
+}
+
+.hostvaninfo{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.hostvandetail nav{
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+/* Detail */
+.details {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1rem !important;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.detail-item {
+  width: 100% !important;
+  color: #000;
+  margin: 0;
+  display: block !important;
+  float: none !important; /* Prevent floating */
+  clear: both !important; /* Clear any floats */
+  position: static !important; /* Reset any positioning */
+}
+
+/* Pricing */
+#price{
+ font-size: 1.9rem;
+ font-weight: 500;
+}
+
+
+/* Login  */
+
+
+.login{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 100px auto;
+
+}
+
+.login form{
+  display: flex;
+  flex-direction: column;
+  min-width: 400px;
+}
+
+.login input{
+  padding: 0.8rem;
+  border: 1px solid rgb(177, 177, 177);
+  border-radius: 4px;
+}
+
+.login button{
+  min-width: 400px;
+  background-color: #FF8C38;
+  font-family: inherit;
+  padding: 0.5rem;
+  border: none;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+#signup{
+  margin-top: 2rem;
+  color: #000;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
