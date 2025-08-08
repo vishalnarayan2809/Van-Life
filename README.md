@@ -1,6 +1,5 @@
 # 🚐 VanLife - Modern React Van Rental Platform
 
-![VanLife Banner](https://github.com/vishalnarayan2809/Van-Life/blob/main/src/assets/background.png?raw=true)
 
 ## 🌟 Overview
 
