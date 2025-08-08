@@ -144,11 +144,82 @@ VanLife/
 
 ## 🌐 Deployment
 
-The application is optimized for deployment on platforms like Vercel, Netlify, or Firebase Hosting. The production build is generated with:
+### Netlify Deployment
 
-```bash
-npm run build
-```
+Follow these steps to deploy the application to Netlify:
+
+1. **Create a production build**
+   ```bash
+   npm run build
+   ```
+
+2. **Deploy using Netlify CLI** (Option 1)
+   
+   Install Netlify CLI if you haven't already:
+   ```bash
+   npm install netlify-cli -g
+   ```
+   
+   Deploy your site:
+   ```bash
+   netlify deploy
+   ```
+   
+   Follow the prompts:
+   - Select "Create & configure a new site"
+   - Choose your team
+   - Enter a site name (or leave blank for auto-generated name)
+   - Specify the publish directory as `dist`
+   
+   Once satisfied with the preview, deploy to production:
+   ```bash
+   netlify deploy --prod
+   ```
+
+3. **Deploy via Netlify Dashboard** (Option 2)
+   
+   a. Sign up or log in to [Netlify](https://www.netlify.com/)
+   
+   b. Click "New site from Git"
+   
+   c. Connect to your GitHub repository
+   
+   d. Configure build settings:
+      - Build command: `npm run build`
+      - Publish directory: `dist`
+      - Environment variables: Add all your Firebase config variables from `.env`
+   
+   e. Click "Deploy site"
+
+4. **Configure Redirects for React Router**
+   
+   Create a `_redirects` file in the `public` folder with:
+   ```
+   /* /index.html 200
+   ```
+   
+   Or add to `netlify.toml` in your project root:
+   ```toml
+   [[redirects]]
+     from = "/*"
+     to = "/index.html"
+     status = 200
+   ```
+
+5. **Set up Environment Variables**
+   
+   In the Netlify dashboard, go to:
+   - Site settings > Build & deploy > Environment
+   - Add all variables from your `.env` file
+   
+   Example:
+   ```
+   VITE_FIREBASE_API_KEY=your_api_key
+   VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
+   ...etc
+   ```
+
+Your site will be live at `https://your-site-name.netlify.app`!
 
 ## 🔍 Future Enhancements
 
