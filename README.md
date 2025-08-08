@@ -8,7 +8,7 @@ VanLife is a modern, feature-rich React application for browsing and renting van
 
 ## 🔥 Live Demo
 
-Check out the [Live Demo](https://van-life-react-demo.vercel.app) to experience VanLife in action!
+Check out the [Live Demo](https://vanlilfe.netlify.app/) to experience VanLife in action!
 
 ## 🔐 Demo Login
 
