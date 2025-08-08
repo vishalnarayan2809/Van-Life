@@ -1,6 +1,19 @@
-import { Link, Outlet,NavLink } from "react-router-dom"
+import { Link, Outlet,NavLink,useNavigation ,redirect} from "react-router-dom"
+import LoadingUI from "./LoadingUI"
+import { auth } from "./api";
+import { onAuthStateChanged } from "firebase/auth";
+import { requireAuth } from "./AuthContext";
+
+
+
+export async function loader({request}) {
+    await requireAuth(request)
+}
+
 
 export default function HostLayout(){
+  const navigation = useNavigation()
+  const isLoading = navigation.state === "loading"
     return <>
              <div className="host">
                 <nav className="hostnav">
@@ -22,9 +35,11 @@ export default function HostLayout(){
                 </NavLink>
              </nav>
            
-               <div className="hostmain">
+              {
+                 isLoading ?<LoadingUI/>:<div className="hostmain">
                  <Outlet/>
                </div>
+              }
           
              </div>
             </>

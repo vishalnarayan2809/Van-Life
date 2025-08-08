@@ -13,6 +13,8 @@
 
 html {
   height: 100%;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -22,18 +24,27 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 #root {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 main {
   flex: 1;
   display: flex;
   width: 100%;
+  max-width: 100%;
+  flex-direction: column;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 a{
@@ -151,7 +162,8 @@ footer p{
 
 .about{
   color: black;
-  width: 100vw;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .about p{
@@ -192,7 +204,11 @@ footer p{
 
 .vans{
   margin: 2rem;
-  width: 100%;
+  width: auto;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 0;
+  overflow-x: hidden;
 }
 .vans h2{
   font-size: 1.8rem;
@@ -201,6 +217,9 @@ footer p{
 
 .filter{
   margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .vanbtn{
@@ -223,7 +242,8 @@ footer p{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
-
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
 .van {
@@ -310,7 +330,11 @@ justify-content: space-between;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  width: 85vw;
+  width: auto;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  padding: 0;
 }
 
 #back a{
@@ -320,7 +344,8 @@ justify-content: space-between;
 
 .van-detail img{
   width: 100%;
-  max-width: 500px;
+  max-width: 400px;
+  object-fit: contain;
 }
 
 .van-detail h3{
@@ -366,10 +391,11 @@ justify-content: space-between;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 2rem;
-  width: 500px;
-  margin: 0 auto;
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 500px;
   padding: 1rem;
+  box-sizing: border-box;
 }
 
 .notfound>button{
@@ -417,6 +443,7 @@ justify-content: space-between;
   width: 50px;
   border-radius: 4px;
   object-fit: cover;
+  
 }
 
 .vantile h4{
@@ -452,6 +479,7 @@ justify-content: space-between;
 width: 100px;
 object-fit: cover;
 border-radius: 4px;
+
 }
 
 .hostvandetail h2{
@@ -511,23 +539,28 @@ border-radius: 4px;
   flex-direction: column;
   align-items: center;
   margin: 100px auto;
-
+  justify-content: center;
 }
 
 .login form{
   display: flex;
   flex-direction: column;
-  min-width: 400px;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
 }
 
 .login input{
   padding: 0.8rem;
   border: 1px solid rgb(177, 177, 177);
   border-radius: 4px;
+  margin: auto;
+  width: 100%;
 }
 
 .login button{
-  min-width: 400px;
+  width: 100%;
+  max-width: 400px;
   background-color: #FF8C38;
   font-family: inherit;
   padding: 0.5rem;
@@ -545,4 +578,339 @@ border-radius: 4px;
   color: #000;
   font-weight: 600;
   font-size: 0.8rem;
+}
+
+/* Host Dashboard */
+.host-dashboard-earnings {
+    background-color: #ffead0;
+    padding: 37px 26px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+.host-dashboard-earnings > .info > h1 {
+    font-size: clamp(24px, 5vw, 36px);
+    color: #161616;
+    margin: 0;
+}
+
+.host-dashboard-earnings > .info > p {
+    color: #4d4d4d;
+}
+
+.host-dashboard-earnings > .info > p > span {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.host-dashboard-earnings > .info > h2 {
+    margin: 0;
+    font-size: 38px;
+    color: #161616;
+    font-weight: 900;
+}
+
+.host-dashboard-reviews {
+    background-color: #ffddb2;
+    padding: 25px 26px;
+    display: flex;
+    align-items: center;
+}
+
+.host-dashboard-reviews > h2 {
+    margin: 0;
+}
+
+.host-dashboard-reviews .star {
+    color: #ff8c38;
+    margin-left: 15px;
+    font-size: 25px;
+}
+
+.host-dashboard-reviews p {
+    margin-left: 5px;
+    font-size: 20px;
+    color: #4d4d4d;
+    margin-right: auto;
+}
+
+.host-dashboard-reviews p > span {
+    font-weight: bold;
+    color: #161616;
+}
+
+.host-dashboard-vans {
+    padding: 38px 26px;
+}
+
+.host-dashboard-vans > .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.host-dashboard-vans .host-vans-list {
+    padding-inline: 0;
+}
+
+.host-income {
+    padding-inline: 26px;
+    color: #161616;
+}
+
+.host-income > p {
+    color: #4d4d4d;
+}
+
+.host-income > p span {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.host-income > h2 {
+    font-size: 38px;
+    color: #161616;
+    font-weight: 900;
+}
+
+img.graph {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.host-income .info-header > p {
+    color: #4d4d4d;
+    max-width: 100%;
+}
+
+.host-income .info-header > p span {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.host-income .info-header > h3 {
+    font-weight: 700;
+    font-size: 24px;
+    margin-top: 60px;
+}
+
+.host-income .transaction {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    margin-bottom: 31px;
+    padding: 35px 29px;
+    border-radius: 6px;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+.host-income .transaction > h3 {
+    font-size: clamp(24px, 5vw, 36px);
+    font-weight: 600;
+    margin: 0;
+}
+
+.host-income .transaction > p {
+    font-weight: 500;
+    font-size: 20px;
+    color: #4d4d4d;
+}
+
+.host-reviews {
+    padding-inline: 26px;
+    color: #161616;
+}
+
+.host-reviews p{
+  color: black;
+}
+
+.host-reviews .top-text {
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.host-reviews .top-text > h2 {
+    font-weight: 700;
+    font-size: 32px;
+    margin: 0;
+    margin-right: 20px;
+}
+
+.host-reviews .top-text > p {
+    margin: 0;
+    color: #4d4d4d;
+}
+
+.host-reviews .top-text > p span {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.host-reviews > img {
+    margin-bottom: 36px;
+}
+
+.host-reviews .review {
+    margin-block: 25px;
+}
+
+.host-reviews .review .info {
+    display: flex;
+}
+
+.host-reviews .review .name {
+    color: #161616;
+    margin-right: 10px;
+    font-weight: 600;
+}
+
+.host-reviews .review .date {
+    color: #8c8c8c;
+}
+
+.host-reviews hr {
+    background-color: #c7c7c7;
+    height: 1px;
+    border: 0;
+}
+
+.host-reviews .review-star {
+    color: #ff8c38;
+    margin-right: 5px;
+}
+
+
+@media (max-width:499px) {
+  header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    height: 80px;
+    padding: 0.8rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  header nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.8rem;
+    margin: 0;
+  }
+
+  header a{
+    text-decoration: none;
+    color: #161616;
+    font-weight: 600;
+    font-size: 0.9rem; 
+  }
+
+  header a:hover,a:active{
+    text-decoration: underline;
+  }
+
+  .logo{
+    font-weight: 900;
+    margin: 0;
+    font-size: 0.6rem;
+  }
+  
+  .login{
+    margin: 100px 20px;
+  }
+  
+  .home {
+    padding: 1rem;
+  }
+  
+  .vans {
+    margin: 1rem;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .van-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .van-detail {
+    margin: 1rem;
+    width: auto;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .about {
+    width: auto;
+    padding: 0;
+  }
+  
+  #info {
+    padding: 1rem;
+  }
+  
+  .host {
+    margin: 1rem;
+    width: auto;
+  }
+  
+  .hostvandetail > div {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .host-dashboard-earnings,
+  .host-dashboard-reviews,
+  .host-dashboard-vans {
+    flex-direction: column;
+    padding: 20px 15px;
+  }
+  
+  .transaction {
+    padding: 20px 15px !important;
+  }
+  
+  .transaction > h3 {
+    font-size: 24px !important;
+  }
+  
+  .host-dashboard-earnings > .info > h2,
+  .host-income > h2 {
+    font-size: 28px !important;
+  }
+  
+  footer {
+    padding: 1rem;
+  }
+  
+  header {
+    justify-content: center;
+  }
+}
+
+/* Additional media query for slightly larger screens */
+@media (min-width: 500px) and (max-width: 767px) {
+  .van-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .host-dashboard-earnings,
+  .host-dashboard-reviews {
+    padding: 25px 20px;
+  }
 }

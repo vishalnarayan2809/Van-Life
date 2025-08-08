@@ -42,13 +42,35 @@ return {
 }
 }
 
-export async function  getHostVan(id) {
- const q = query(vansRef,where("hostID","==",id))
+
+async function getHostId() {
+    const email = auth.currentUser.email
+    const userRef = collection(db,"users")
+    const q = query(userRef,where("email","==",email))
+    try{
+        const snapshot = await getDocs(q)
+       if (snapshot.empty) {
+            throw new Error("No user found with this email")
+        }
+        
+        // Get the first document that matches the query
+        const userDoc = snapshot.docs[0]
+        return userDoc.id
+    }
+    catch(e){
+        throw(e.message) 
+    }
+    
+}
+export async function  getHostVan() {
+    const id = await getHostId()
+    console.log(id)
+ const q = query(vansRef,where("hostId","==",id))
     try{
          const snapshot = await getDocs(q)
         const vans = snapshot.docs.map(doc =>{
     return {
-        ...doc,
+        ...doc.data(),
         id: doc.id
 
     }
